@@ -1,0 +1,92 @@
+<div class="sign-up-form">
+  <form [formGroup]="signupForm" class="centered-form">
+    <mat-form-field class="full-width-input">
+      <mat-label>First name *</mat-label>
+      <input matInput formControlName="firstName" id="firstName" type="text" />
+    </mat-form-field>
+    <div
+      *ngIf="
+        !signupForm.controls.firstName.valid &&
+        signupForm.controls.firstName.touched
+      "
+      class="validator-error"
+    >
+      <p>Please enter a valid First name.</p>
+    </div>
+
+    <mat-form-field class="full-width-input">
+      <mat-label>Last name *</mat-label>
+      <input matInput formControlName="lastName" id="lastName" type="text" />
+    </mat-form-field>
+    <div
+      *ngIf="
+        !signupForm.controls.lastName.valid &&
+        signupForm.controls.lastName.touched
+      "
+      class="validator-error"
+    >
+      <p>Please enter a valid Last name.</p>
+    </div>
+
+    <mat-form-field class="full-width-input">
+      <mat-label>Email *</mat-label>
+      <input matInput formControlName="email" id="email" type="email" />
+    </mat-form-field>
+    <div
+      *ngIf="
+        !signupForm.controls.email.valid && signupForm.controls.email.touched
+      "
+      class="validator-error"
+    >
+      <p>Please enter a valid email.</p>
+    </div>
+
+    <mat-form-field class="full-width-input">
+      <mat-label>Password *</mat-label>
+      <input
+        matInput
+        formControlName="password"
+        id="password"
+        type="password"
+      />
+    </mat-form-field>
+    <div
+      *ngIf="
+        !signupForm.controls.password.valid &&
+        !signupForm.errors?.passwordError &&
+        signupForm.controls.password.touched
+      "
+      class="validator-error"
+    >
+      <p>
+        Please enter a valid Password. Password should be min 8 symbols,<br />contain
+        uppercase and lowercase symbols
+      </p>
+    </div>
+    <div *ngIf="signupForm.errors?.passwordError" class="validator-error">
+      <p>
+        Please enter a valid Password. Password shouldn't contain neither first
+        or last name.
+      </p>
+    </div>
+
+    <button
+      mat-raised-button
+      color="warn"
+      id="submitForm"
+      [disabled]="!signupForm.valid"
+      class="centered-button"
+      (click)="submitForm()"
+    >
+      Sign up
+    </button>
+  </form>
+
+  <div *ngIf="showSuccessMessage" class="success-message">
+    <h2>Well Done!</h2>
+  </div>
+  <div *ngIf="showErrorMessage" class="error-message">
+    <h2>Oops, something went wrong.</h2>
+    <p>Please check all the fields and try again.</p>
+  </div>
+</div>

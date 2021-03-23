@@ -1,0 +1,33 @@
+.centered-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+  margin: 200px auto 50px;
+  text-align: center;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+.centered-button {
+  min-width: 100px;
+  max-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.validator-error {
+  color: #f44336;
+}
+
+.success-message {
+  text-align: center;
+}
+
+.error-message {
+  text-align: center;
+  h2 {
+    color: #f44336;
+  }
+}

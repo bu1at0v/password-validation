@@ -2,26 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.5.
 
-## Development server
+The key point's of this project are:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1. Clear and understandable for user what to do.
+2. Field validation. User get's an idea of what is expected from him to be entered in the input field.
+3. Password validation with external validator to check if first or last name are in the password string. If so - show exact error saying it's not possible to have one of those in password.
+4. Button is disabled till the moment when the form is filled correctly.
+5. Once data is submitted - show feedback to user that api call landed properly, the same about error.
+6. Functionality needs to be tested covered with tests.
 
-## Code scaffolding
+## Running
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm install` to install packages.
 
-## Build
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run `ng test` to execute the unit tests.
